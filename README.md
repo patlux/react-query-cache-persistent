@@ -8,7 +8,24 @@ This is huge if your cache is several megabytes in size.
 
 > ⚠️  The only drawback is that this only works in a synchronous way. You cannot use this if your storage only provides asynchronous methods to get/set the cache. See [How it works](#how-it-works)
 
-## Example
+## Usage
+
+See [below for examples](#examples).
+
+```ts
+import { PersistentQueryCache } from 'react-query-cache-persistent'
+
+// Your implementation. See below for examples.
+const persistentQueryCache = new PersistentQueryCache({
+  add: (query) => {},
+  updated: (query) => {},
+  removed: (query) => {},
+})
+
+const queryClient = new QueryClient({ queryCache: persistentQueryCache })
+```
+
+## Examples
 
 ### Web
 
