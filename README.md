@@ -42,6 +42,10 @@ const queryClient = new QueryClient({ queryCache: persistentQueryCache })
 
 Uses `@op-engineering/op-sqlite` as storage. But you can use any sqlite solution as long it supports synchronous get/set.
 
+The example below writes each query as a table row into a sqlite database
+
+![queryCache.sqlite3](https://github.com/patlux/react-query-cache-persistent/assets/4481570/8913de2a-4af8-46e1-858f-478d8ce9914d)
+
 ```ts
 import {
   ANDROID_DATABASE_PATH,
@@ -123,6 +127,9 @@ export const queryCache = new PersistQueryCache({
   },
 })
 ```
+
+
+
 
 # How it works
 
