@@ -1,35 +1,49 @@
 {
   "name": "react-query-cache-persistent",
   "version": "0.0.1",
-  "scripts": {
-    "build": "tsup ./src/index.ts",
-    "check-types": "tsc --noEmit --skipLibCheck"
-  },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "prettier": "^3.3.2",
-    "tsup": "^8.1.0"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0",
-    "@tanstack/react-query": "^5.45.1"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
-  },
   "author": {
     "url": "https://patwoz.dev",
     "name": "Patrick Wozniak",
     "email": "hi@patwoz.de"
   },
-  "license": "MIT",
   "repository": {
     "url": "https://github.com/patlux/react-query-cache-persistent.git"
   },
   "main": "dist/index.js",
-  "types": "src/index.ts",
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.47.0",
+    "@types/bun": "latest",
+    "prettier": "^3.3.2",
+    "tsup": "^8.1.0"
+  },
+  "peerDependencies": {
+    "typescript": "5.4.2",
+    "@tanstack/react-query": "^5.45.1"
+  },
   "files": [
     "/dist"
-  ]
+  ],
+  "keywords": [
+    "react-query",
+    "react",
+    "react-native",
+    "query-cache",
+    "cache"
+  ],
+  "license": "MIT",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "scripts": {
+    "build": "tsup",
+    "check-types": "tsc --noEmit --skipLibCheck"
+  },
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  }
 }
