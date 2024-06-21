@@ -6,7 +6,7 @@ export type QueryCachePersistor = {
   removed: (query: Query) => void
 }
 
-export class PersistQueryCache extends QueryCache {
+export class PersistentQueryCache extends QueryCache {
   persistor: QueryCachePersistor
 
   constructor(persistor: QueryCachePersistor) {

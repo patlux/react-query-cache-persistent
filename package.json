@@ -3,10 +3,15 @@
   "module": "src/index.ts",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "prettier": "^3.3.2"
   },
   "peerDependencies": {
     "typescript": "^5.0.0",
     "@tanstack/react-query": "^5.45.1"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }
