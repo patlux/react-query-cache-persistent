@@ -14,6 +14,8 @@ This is huge if your cache is several megabytes in size.
 
 Uses `localStorage` as storage.
 
+![localStorage](https://github.com/patlux/react-query-cache-persistent/assets/4481570/5c7c1ebf-9c94-4171-b411-224debe1b7fb)
+
 ```ts
 import { PersistentQueryCache } from 'react-query-cache-persistent'
 
