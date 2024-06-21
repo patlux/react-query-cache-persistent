@@ -14,6 +14,7 @@
     "@microsoft/api-extractor": "^7.47.0",
     "@types/bun": "latest",
     "prettier": "^3.3.2",
+    "release-it": "^17.4.0",
     "tsup": "^8.1.0"
   },
   "peerDependencies": {
@@ -37,7 +38,8 @@
   },
   "scripts": {
     "build": "tsup",
-    "check-types": "tsc --noEmit --skipLibCheck"
+    "check-types": "tsc --noEmit --skipLibCheck",
+    "release": "release-it"
   },
   "types": "dist/src/index.d.ts",
   "exports": {
