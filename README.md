@@ -127,3 +127,7 @@ export const queryCache = new PersistQueryCache({
 # How it works
 
 > TODO
+
+# License
+
+MIT License.
