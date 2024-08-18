@@ -121,7 +121,7 @@ const runStmt = (stmt: PreparedStatementObj, params: string[]) => {
   }
 }
 
-export const queryCache = new PersistQueryCache({
+export const queryCache = new PersistentQueryCache({
   add: (query: Query) => {
     const result = runStmt(selectStmt, [query.queryHash])
 
