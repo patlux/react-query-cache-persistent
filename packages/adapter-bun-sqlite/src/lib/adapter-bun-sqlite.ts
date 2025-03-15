@@ -1,4 +1,4 @@
-import { Query } from '@tanstack/query-core'
+import type { Query } from '@tanstack/query-core'
 import { Database } from 'bun:sqlite'
 
 import { PersistentQueryCache } from 'react-query-cache-persistent'

@@ -1,7 +1,7 @@
 import { Database } from 'bun:sqlite'
 import { expect, test } from 'bun:test'
 import { QueryClient } from '@tanstack/query-core'
-import { createBunSqlitePersistentQueryCache } from './adapter-bun-sqlite.js'
+import { createBunSqlitePersistentQueryCache } from '../src/lib/adapter-bun-sqlite.js'
 
 const db = new Database(':memory:')
 

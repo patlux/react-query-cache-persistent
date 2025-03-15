@@ -17,6 +17,9 @@
       "default": "./dist/index.js"
     }
   },
+  "files": [
+    "dist"
+  ],
   "nx": {
     "targets": {
       "build": {
@@ -31,7 +34,11 @@
           "format": [
             "esm"
           ],
-          "declarationRootDir": "packages/adapter-bun-sqlite/src"
+          "declarationRootDir": "packages/adapter-bun-sqlite/src",
+          "platform": "node",
+          "external": [
+            "react-query-cache-persistent"
+          ]
         }
       }
     }
