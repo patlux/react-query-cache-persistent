@@ -1,6 +1,5 @@
 {
   "name": "@patwoz/react-query-cache-persistent-workspace",
-  "version": "1.0.0",
   "nx": {},
   "scripts": {
     "build:all": "nx run-many -t build"
