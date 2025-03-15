@@ -1,0 +1,45 @@
+{
+  "name": "@patwoz/react-query-cache-persistent-adapter-bun-sqlite",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "bun test"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "@nx/esbuild:esbuild",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "packages/adapter-bun-sqlite/dist",
+          "main": "packages/adapter-bun-sqlite/src/index.ts",
+          "tsConfig": "packages/adapter-bun-sqlite/tsconfig.lib.json",
+          "format": [
+            "esm"
+          ],
+          "declarationRootDir": "packages/adapter-bun-sqlite/src"
+        }
+      }
+    }
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react-query-cache-persistent": "*",
+    "@types/bun": "*",
+    "@tanstack/query-core": "^5.0.0"
+  }
+}

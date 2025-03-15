@@ -21,15 +21,21 @@
   },
   "devDependencies": {
     "@nx/esbuild": "20.6.0",
-    "esbuild": "^0.19.2",
     "@nx/js": "20.6.0",
+    "@swc-node/register": "~1.9.1",
+    "@swc/core": "~1.5.7",
+    "@swc/helpers": "~0.5.11",
     "@types/bun": "latest",
+    "@types/node": "18.16.9",
+    "esbuild": "^0.19.2",
     "nx": "20.6.0",
     "prettier": "^3.3.2",
     "rollup": "^4.14.0",
+    "tslib": "^2.3.0",
     "typescript": "~5.7.2"
   },
   "patchedDependencies": {
     "nx@20.6.0": "patches/nx@20.6.0.patch"
-  }
+  },
+  "dependencies": {}
 }

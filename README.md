@@ -6,7 +6,7 @@ The biggest advantage in terms of performance is, that the persistor stores the 
 
 This is huge if your cache is several megabytes in size.
 
-> ⚠️  The only drawback is that this only works in a synchronous way. You cannot use this if your storage only provides asynchronous methods to get/set the cache. See [How it works](#how-it-works)
+> ⚠️ The only drawback is that this only works in a synchronous way. You cannot use this if your storage only provides asynchronous methods to get/set the cache. See [How it works](#how-it-works)
 
 ## Usage
 
@@ -24,6 +24,10 @@ const persistentQueryCache = new PersistentQueryCache({
 
 const queryClient = new QueryClient({ queryCache: persistentQueryCache })
 ```
+
+## Adapters
+
+- [bun:sqlite](./packages/adapter-bun-sqlite/README.md)
 
 ## Examples
 
@@ -44,10 +48,16 @@ const persistentQueryCache = new PersistentQueryCache({
       query.state = JSON.parse(item)
     }
 
-    window.localStorage.setItem(`queryCache.${query.queryHash}`, JSON.stringify(query.state))
+    window.localStorage.setItem(
+      `queryCache.${query.queryHash}`,
+      JSON.stringify(query.state),
+    )
   },
   updated: (query) => {
-    window.localStorage.setItem(`queryCache.${query.queryHash}`, JSON.stringify(query.state))
+    window.localStorage.setItem(
+      `queryCache.${query.queryHash}`,
+      JSON.stringify(query.state),
+    )
   },
   removed: (query) => {
     window.localStorage.removeItem(`queryCache.${query.queryHash}`)
@@ -89,14 +99,18 @@ const connect = () => {
 let db = connect()
 
 db.execute(
-  `CREATE TABLE IF NOT EXISTS ${tableName} (queryHash TEXT NOT NULL UNIQUE, queryState TEXT) STRICT;`
+  `CREATE TABLE IF NOT EXISTS ${tableName} (queryHash TEXT NOT NULL UNIQUE, queryState TEXT) STRICT;`,
 )
 
-const selectStmt = db.prepareStatement(`SELECT queryState FROM ${tableName} WHERE queryHash = ?;`)
-const insertStmt = db.prepareStatement(
-  `INSERT INTO ${tableName} (queryHash, queryState) VALUES (?, ?) ON CONFLICT(queryHash) DO UPDATE SET queryState=excluded.queryState;`
+const selectStmt = db.prepareStatement(
+  `SELECT queryState FROM ${tableName} WHERE queryHash = ?;`,
 )
-const deleteStmt = db.prepareStatement(`DELETE FROM ${tableName} WHERE queryHash = ?;`)
+const insertStmt = db.prepareStatement(
+  `INSERT INTO ${tableName} (queryHash, queryState) VALUES (?, ?) ON CONFLICT(queryHash) DO UPDATE SET queryState=excluded.queryState;`,
+)
+const deleteStmt = db.prepareStatement(
+  `DELETE FROM ${tableName} WHERE queryHash = ?;`,
+)
 
 /**
  * Executes the prepared statement with the given parameters
@@ -130,7 +144,9 @@ export const queryCache = new PersistentQueryCache({
       try {
         query.state = JSON.parse(firstRow.queryState)
       } catch (error: unknown) {
-        console.warn(`Failed to hydrate state for query "${query.queryHash}": ${error}`)
+        console.warn(
+          `Failed to hydrate state for query "${query.queryHash}": ${error}`,
+        )
       }
     }
 
@@ -146,9 +162,6 @@ export const queryCache = new PersistentQueryCache({
   },
 })
 ```
-
-
-
 
 # How it works
 
