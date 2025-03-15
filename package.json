@@ -1,6 +1,10 @@
 {
-  "name": "react-query-cache-persistent",
+  "name": "@patwoz/react-query-cache-persistent-workspace",
   "version": "1.0.0",
+  "nx": {},
+  "scripts": {
+    "build:all": "nx run-many -t build"
+  },
   "author": {
     "url": "https://patwoz.dev",
     "name": "Patrick Wozniak",
@@ -9,43 +13,21 @@
   "repository": {
     "url": "https://github.com/patlux/react-query-cache-persistent.git"
   },
-  "main": "dist/index.js",
-  "devDependencies": {
-    "@microsoft/api-extractor": "^7.47.0",
-    "@types/bun": "latest",
-    "prettier": "^3.3.2",
-    "release-it": "^17.4.0",
-    "tsup": "^8.1.0"
-  },
-  "peerDependencies": {
-    "typescript": "5.4.2",
-    "@tanstack/react-query": "^5.45.1"
-  },
-  "files": [
-    "/dist"
+  "workspaces": [
+    "packages/*"
   ],
-  "keywords": [
-    "react-query",
-    "react",
-    "react-native",
-    "query-cache",
-    "cache"
-  ],
-  "license": "MIT",
   "prettier": {
     "semi": false,
     "singleQuote": true
   },
-  "scripts": {
-    "build": "tsup",
-    "check-types": "tsc --noEmit --skipLibCheck",
-    "release": "release-it"
-  },
-  "types": "dist/src/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    }
+  "devDependencies": {
+    "@nx/esbuild": "20.6.0",
+    "esbuild": "^0.19.2",
+    "@nx/js": "20.6.0",
+    "@types/bun": "latest",
+    "nx": "20.6.0",
+    "prettier": "^3.3.2",
+    "rollup": "^4.14.0",
+    "typescript": "~5.7.2"
   }
 }

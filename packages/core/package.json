@@ -1,0 +1,51 @@
+{
+  "name": "react-query-cache-persistent",
+  "version": "1.0.0",
+  "keywords": [
+    "react-query",
+    "react",
+    "react-native",
+    "query-cache",
+    "cache"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "@nx/esbuild:esbuild",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "packages/core/dist",
+          "main": "packages/core/src/index.ts",
+          "tsConfig": "packages/core/tsconfig.lib.json",
+          "format": [
+            "esm",
+            "cjs"
+          ],
+          "declarationRootDir": "packages/core/src"
+        }
+      }
+    }
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": "^5.45.1"
+  }
+}
