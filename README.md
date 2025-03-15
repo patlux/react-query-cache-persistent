@@ -8,9 +8,11 @@ This is huge if your cache is several megabytes in size.
 
 > ⚠️ The only drawback is that this only works in a synchronous way. You cannot use this if your storage only provides asynchronous methods to get/set the cache. See [How it works](#how-it-works)
 
-## Usage
+## Adapters
 
-See [below for examples](#examples).
+- [bun:sqlite](./packages/adapter-bun-sqlite/README.md)
+
+## Create your own adapter
 
 ```ts
 import { PersistentQueryCache } from 'react-query-cache-persistent'
@@ -24,12 +26,6 @@ const persistentQueryCache = new PersistentQueryCache({
 
 const queryClient = new QueryClient({ queryCache: persistentQueryCache })
 ```
-
-## Adapters
-
-- [bun:sqlite](./packages/adapter-bun-sqlite/README.md)
-
-## Examples
 
 ### Web
 

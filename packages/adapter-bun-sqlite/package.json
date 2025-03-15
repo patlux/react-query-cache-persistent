@@ -36,6 +36,9 @@
       }
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {},
   "peerDependencies": {
     "react-query-cache-persistent": "*",
