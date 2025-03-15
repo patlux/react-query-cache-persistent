@@ -1,6 +1,7 @@
 {
   "name": "@patwoz/react-query-cache-persistent-adapter-bun-sqlite",
   "version": "0.0.3",
+  "private": false,
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
