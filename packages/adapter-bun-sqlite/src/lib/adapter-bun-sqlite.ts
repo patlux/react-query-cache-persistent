@@ -38,7 +38,7 @@ export const createBunSqlitePersistentQueryCache = (
       const firstRow = rows[0] as any
       if (firstRow != null && 'queryState') {
         try {
-          query.state = JSON.parse(firstRow.queryState)
+          query.state = JSON.parse(firstRow.query_state)
         } catch (error: unknown) {
           onError?.(error)
         }
