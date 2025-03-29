@@ -51,5 +51,14 @@
     "react-query-cache-persistent": "*",
     "@types/bun": "*",
     "@tanstack/query-core": "^5.0.0"
-  }
+  },
+  "author": {
+    "url": "https://patwoz.dev",
+    "name": "Patrick Wozniak",
+    "email": "hi@patwoz.de"
+  },
+  "repository": {
+    "url": "https://github.com/patlux/react-query-cache-persistent.git"
+  },
+  "homepage": "https://github.com/patlux/react-query-cache-persistent/tree/main/packages/adapter-bun-sqlite"
 }
