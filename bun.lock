@@ -21,16 +21,20 @@
     },
     "packages/adapter-bun-sqlite": {
       "name": "@patwoz/react-query-cache-persistent-adapter-bun-sqlite",
-      "version": "0.0.1",
+      "version": "0.0.8",
       "peerDependencies": {
         "@tanstack/query-core": "^5.0.0",
         "@types/bun": "*",
         "react-query-cache-persistent": "*",
       },
     },
+    "packages/adapter-op-sqlite": {
+      "name": "@patwoz/adapter-op-sqlite",
+      "version": "0.0.1",
+    },
     "packages/core": {
       "name": "react-query-cache-persistent",
-      "version": "1.0.0",
+      "version": "1.0.6",
       "peerDependencies": {
         "@tanstack/react-query": "^5.45.1",
       },
@@ -329,6 +333,8 @@
     "@nx/nx-win32-x64-msvc": ["@nx/nx-win32-x64-msvc@20.6.0", "", { "os": "win32", "cpu": "x64" }, "sha512-xfCaefdf1dHQxqN8OLfiA8Cq9b8F1HqVnpWYVB6zoD/TCsmRhV8KLbUlnv2n4AK+ZYu7H1AgAFF9lC4vDeeoTQ=="],
 
     "@nx/workspace": ["@nx/workspace@20.6.0", "", { "dependencies": { "@nx/devkit": "20.6.0", "@zkochan/js-yaml": "0.0.7", "chalk": "^4.1.0", "enquirer": "~2.3.6", "nx": "20.6.0", "picomatch": "4.0.2", "tslib": "^2.3.0", "yargs-parser": "21.1.1" } }, "sha512-VYZ5fANfaqrpkakTOhwWWPLyUdgHEDSd/ziDZRI5Aj/fzDZu2sb0NIENpktd/6duIYp/G8Ne9du2ABku0/2uhA=="],
+
+    "@patwoz/adapter-op-sqlite": ["@patwoz/adapter-op-sqlite@workspace:packages/adapter-op-sqlite"],
 
     "@patwoz/react-query-cache-persistent-adapter-bun-sqlite": ["@patwoz/react-query-cache-persistent-adapter-bun-sqlite@workspace:packages/adapter-bun-sqlite"],
 

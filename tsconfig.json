@@ -8,6 +8,9 @@
     },
     {
       "path": "./packages/adapter-bun-sqlite"
+    },
+    {
+      "path": "./packages/adapter-op-sqlite"
     }
   ]
 }

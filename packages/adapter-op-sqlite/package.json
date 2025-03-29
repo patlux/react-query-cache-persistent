@@ -1,0 +1,37 @@
+{
+  "name": "@patwoz/react-query-cache-persistent-adapter-op-sqlite",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "@nx/esbuild:esbuild",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "packages/adapter-op-sqlite/dist",
+          "main": "packages/adapter-op-sqlite/src/index.ts",
+          "tsConfig": "packages/adapter-op-sqlite/tsconfig.lib.json",
+          "format": [
+            "esm"
+          ],
+          "declarationRootDir": "packages/adapter-op-sqlite/src"
+        }
+      }
+    }
+  },
+  "dependencies": {}
+}
