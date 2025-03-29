@@ -1,5 +1,8 @@
 {
   "name": "@patwoz/expo",
   "version": "0.0.1",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@patwoz/react-query-cache-persistent-adapter-op-sqlite": "*"
+  }
 }

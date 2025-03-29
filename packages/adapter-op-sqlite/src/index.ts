@@ -1,1 +1,1 @@
-export * from './lib/adapter-op-sqlite.js'
+export { default } from './lib/adapter-op-sqlite'

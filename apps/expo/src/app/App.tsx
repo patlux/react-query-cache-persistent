@@ -11,6 +11,7 @@ import {
   Linking,
 } from 'react-native'
 import Svg, { G, Path } from 'react-native-svg'
+import AdapterOpSqlite from '@patwoz/react-query-cache-persistent-adapter-op-sqlite'
 
 export const App = () => {
   const [whatsNextYCoord, setWhatsNextYCoord] = useState<number>(0)
