@@ -13,23 +13,32 @@
     "url": "https://github.com/patlux/react-query-cache-persistent.git"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "prettier": {
     "semi": false,
     "singleQuote": true
   },
   "devDependencies": {
+    "@expo/cli": "~0.21.8",
     "@nx/esbuild": "20.6.0",
+    "@nx/expo": "20.6.0",
     "@nx/js": "20.6.0",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
+    "@testing-library/jest-native": "~5.4.3",
+    "@testing-library/react-native": "~12.9.0",
     "@types/bun": "latest",
     "@types/node": "18.16.9",
+    "@types/react": "~18.3.12",
+    "babel-preset-expo": "~12.0.1",
     "esbuild": "^0.19.2",
+    "jest-expo": "~52.0.2",
     "nx": "20.6.0",
     "prettier": "^3.3.2",
+    "react-test-renderer": "~18.3.1",
     "rollup": "^4.14.0",
     "tslib": "^2.3.0",
     "typescript": "~5.7.2"
@@ -37,5 +46,17 @@
   "patchedDependencies": {
     "nx@20.6.0": "patches/nx@20.6.0.patch"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@expo/metro-config": "~0.19.4",
+    "@expo/metro-runtime": "~4.0.0",
+    "expo": "~52.0.11",
+    "expo-splash-screen": "~0.29.13",
+    "expo-status-bar": "~2.0.0",
+    "react": "~18.3.1",
+    "react-dom": "~18.3.1",
+    "react-native": "0.76.3",
+    "react-native-svg": "~15.8.0",
+    "react-native-svg-transformer": "~1.5.0",
+    "react-native-web": "~0.19.13"
+  }
 }
