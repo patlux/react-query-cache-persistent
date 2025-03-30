@@ -23,6 +23,7 @@
     "dist"
   ],
   "nx": {
+    "projectType": "application",
     "targets": {
       "build": {
         "executor": "@nx/esbuild:esbuild",

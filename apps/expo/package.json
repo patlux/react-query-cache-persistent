@@ -17,5 +17,8 @@
   },
   "devDependencies": {
     "expo-build-properties": "^0.13.2"
+  },
+  "nx": {
+    "projectType": "application"
   }
 }
