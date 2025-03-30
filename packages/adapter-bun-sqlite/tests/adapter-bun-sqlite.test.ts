@@ -1,12 +1,12 @@
 import { Database } from 'bun:sqlite'
 import { expect, test } from 'bun:test'
 import { QueryClient } from '@tanstack/query-core'
-import { createBunSqlitePersistentQueryCache } from '../src/lib/adapter-bun-sqlite.js'
+import { createPersistentQueryCacheForBunSqlite } from '../src/lib/adapter-bun-sqlite.js'
 
 const db = new Database(':memory:')
 
 let queryClient = new QueryClient({
-  queryCache: createBunSqlitePersistentQueryCache(db),
+  queryCache: createPersistentQueryCacheForBunSqlite(db),
 })
 
 test('Should insert query cache', async () => {
@@ -75,7 +75,7 @@ test('Should not update query', async () => {
   expect(before.data).toBe('test 2')
 
   queryClient = new QueryClient({
-    queryCache: createBunSqlitePersistentQueryCache(db),
+    queryCache: createPersistentQueryCacheForBunSqlite(db),
   })
 
   let count = 0

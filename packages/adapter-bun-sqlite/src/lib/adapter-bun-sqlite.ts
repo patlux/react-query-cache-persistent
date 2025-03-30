@@ -8,7 +8,7 @@ type Props = {
   onError?: (error: unknown) => void
 }
 
-export const createBunSqlitePersistentQueryCache = (
+export const createPersistentQueryCacheForBunSqlite = (
   db: Database,
   { tableName = 'query_cache', onError }: Props = {},
 ) => {
@@ -56,3 +56,9 @@ export const createBunSqlitePersistentQueryCache = (
     },
   })
 }
+
+/**
+ * @deprecated use `createPersistentQueryCacheForBunSqlite`
+ */
+export const createBunSqlitePersistentQueryCache =
+  createPersistentQueryCacheForBunSqlite
