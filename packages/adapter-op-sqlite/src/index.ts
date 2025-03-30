@@ -1,1 +1,1 @@
-export { default } from './lib/adapter-op-sqlite'
+export * from './lib/adapter-op-sqlite'

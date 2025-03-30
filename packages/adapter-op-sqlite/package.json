@@ -12,7 +12,36 @@
     "./package.json": "./package.json"
   },
   "peerDependencies": {
+    "@op-engineering/op-sqlite": ">=11.0.0",
     "react": "~18.3.1",
-    "react-native": "0.76.3"
+    "react-native": "0.76.7",
+    "react-query-cache-persistent": "*",
+    "@tanstack/query-core": ">=5.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "@nx/esbuild:esbuild",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "packages/adapter-op-sqlite/dist",
+          "main": "packages/adapter-op-sqlite/src/index.ts",
+          "tsConfig": "packages/adapter-op-sqlite/tsconfig.lib.json",
+          "format": [
+            "esm"
+          ],
+          "declarationRootDir": "packages/adapter-op-sqlite/src",
+          "platform": "node",
+          "external": [
+            "react-query-cache-persistent"
+          ]
+        }
+      }
+    }
   }
 }
