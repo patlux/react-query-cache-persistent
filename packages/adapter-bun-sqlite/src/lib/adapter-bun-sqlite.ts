@@ -1,5 +1,5 @@
-import type { Query } from '@tanstack/query-core'
 import { Database } from 'bun:sqlite'
+import type { Query } from '@tanstack/query-core'
 
 import { PersistentQueryCache } from 'react-query-cache-persistent'
 
@@ -8,7 +8,7 @@ type Props = {
   onError?: (error: unknown) => void
 }
 
-export const createBunSqlitePersistentQueryCache = (
+export const createPersistentQueryCacheForBunSqlite = (
   db: Database,
   { tableName = 'query_cache', onError }: Props = {},
 ) => {
@@ -36,9 +36,9 @@ export const createBunSqlitePersistentQueryCache = (
       const rows = selectStmt.all(query.queryHash)
 
       const firstRow = rows[0] as any
-      if (firstRow != null && 'queryState') {
+      if (firstRow != null && 'query_state' in firstRow) {
         try {
-          query.state = JSON.parse(firstRow.queryState)
+          query.state = JSON.parse(firstRow.query_state)
         } catch (error: unknown) {
           onError?.(error)
         }
@@ -56,3 +56,9 @@ export const createBunSqlitePersistentQueryCache = (
     },
   })
 }
+
+/**
+ * @deprecated use `createPersistentQueryCacheForBunSqlite`
+ */
+export const createBunSqlitePersistentQueryCache =
+  createPersistentQueryCacheForBunSqlite

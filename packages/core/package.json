@@ -1,6 +1,6 @@
 {
   "name": "react-query-cache-persistent",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "keywords": [
     "react-query",
     "react",
@@ -47,5 +47,14 @@
   },
   "peerDependencies": {
     "@tanstack/react-query": "^5.45.1"
-  }
+  },
+  "author": {
+    "url": "https://patwoz.dev",
+    "name": "Patrick Wozniak",
+    "email": "hi@patwoz.de"
+  },
+  "repository": {
+    "url": "https://github.com/patlux/react-query-cache-persistent.git"
+  },
+  "homepage": "https://github.com/patlux/react-query-cache-persistent/tree/main/packages/core"
 }
