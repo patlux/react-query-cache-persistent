@@ -18,9 +18,21 @@ import { PersistentQueryCache } from 'react-query-cache-persistent'
 
 // Your implementation. See below for examples.
 const persistentQueryCache = new PersistentQueryCache({
-  add: (query) => {},
-  updated: (query) => {},
-  removed: (query) => {},
+  add: (query) => {
+    // 1. use `query.queryHash` to query your store
+    const queryState =
+      /* from your store */
+      // 2. assign the value from your store to `query.state`
+      (query.state = queryState)
+
+    // 3. write `query.state` into your store
+  },
+  updated: (query) => {
+    // update your store
+  },
+  removed: (query) => {
+    // remove `query.queryHash` from your store
+  },
 })
 
 const queryClient = new QueryClient({ queryCache: persistentQueryCache })
