@@ -4,7 +4,7 @@ This persistor extends [QueryCache](https://tanstack.com/query/v5/docs/reference
 
 Its main performance benefit is storing queries individually rather than persisting the entire cache with each update. This significantly boosts performance when your cache size reaches several megabytes.
 
-> ⚠️ However, this approach only supports synchronous operations. If your storage relies on asynchronous get/set methods, you won't be able to use this persistor. Refer to How it works for more details.
+> ⚠️ However, this approach only supports synchronous operations. If your storage relies on asynchronous get/set methods, you won't be able to use this persistor.
 
 ## Adapters
 
