@@ -1,6 +1,6 @@
 # react-query-cache-persistent
 
-This persistor extends [QueryCache](https://tanstack.com/query/v5/docs/reference/QueryCache), enabling straightforward cache persistence without needing a hydration/dehydration phase.
+This persistor extends [QueryCache](https://tanstack.com/query/v5/docs/reference/QueryCache), enabling straightforward cache persistence without needing a hydration/dehydration phase. As a result, your app gains immediate access to data, eliminating loading states.
 
 Its main performance benefit is storing queries individually rather than persisting the entire cache with each update. This significantly boosts performance when your cache size reaches several megabytes.
 
