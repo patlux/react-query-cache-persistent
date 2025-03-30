@@ -1,5 +1,5 @@
-import type { Query } from '@tanstack/query-core'
 import { Database } from 'bun:sqlite'
+import type { Query } from '@tanstack/query-core'
 
 import { PersistentQueryCache } from 'react-query-cache-persistent'
 
@@ -36,7 +36,7 @@ export const createBunSqlitePersistentQueryCache = (
       const rows = selectStmt.all(query.queryHash)
 
       const firstRow = rows[0] as any
-      if (firstRow != null && 'queryState') {
+      if (firstRow != null && 'query_state' in firstRow) {
         try {
           query.state = JSON.parse(firstRow.query_state)
         } catch (error: unknown) {
